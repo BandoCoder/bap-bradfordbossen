@@ -1,8 +1,9 @@
 const sequenceState = [
   {
     id: 0,
-    title: "Pulse",
+    title: "User Pattern 1",
     noteCount: 16,
+    userId: 0,
     trackList: [
       {
         title: "Kick",
