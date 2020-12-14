@@ -1,39 +1,39 @@
 const sequenceState = [
   {
     id: 0,
-    title: "User Pattern 1",
-    noteCount: 16,
+    title: "User Pattern",
+    boxCount: 16,
     userId: 0,
     trackList: [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [],
+        onBoxes: [],
       },
       {
         title: "Snare",
         soundFile: "snare",
-        onNotes: [],
+        onBoxes: [],
       },
       {
         title: "Open Hat",
         soundFile: "openHat",
-        onNotes: [],
+        onBoxes: [],
       },
       {
         title: "Closed Hat",
         soundFile: "closedHat",
-        onNotes: [],
+        onBoxes: [],
       },
       {
         title: "Shaker",
         soundFile: "shaker",
-        onNotes: [],
+        onBoxes: [],
       },
       {
         title: "Shout",
         soundFile: "shout",
-        onNotes: [],
+        onBoxes: [],
       },
     ],
   },

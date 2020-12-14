@@ -5,10 +5,10 @@ import Track from "./Track";
 
 const TrackList = ({ currentStepId }) => {
   const {
-    sequence: { trackList, noteCount },
+    sequence: { trackList, boxCount },
   } = useContext(Context);
   const content = trackList.map((track, trackId) => {
-    const { title, onNotes, soundFile } = track;
+    const { title, onBoxes, soundFile } = track;
     const soundFilePath = soundFiles[soundFile];
 
     return (
@@ -17,8 +17,8 @@ const TrackList = ({ currentStepId }) => {
         trackId={+trackId}
         currentStepId={currentStepId}
         title={title}
-        noteCount={noteCount}
-        onNotes={onNotes}
+        boxCount={boxCount}
+        onBoxes={onBoxes}
         soundFilePath={soundFilePath}
       />
     );

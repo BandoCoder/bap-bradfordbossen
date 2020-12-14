@@ -7,15 +7,15 @@ const Track = ({
   trackId,
   currentStepId,
   title,
-  noteCount,
-  onNotes,
+  boxCount,
+  onBoxes,
   soundFilePath,
 }) => {
   const [play] = useSound(soundFilePath);
 
-  const notes = [...Array(noteCount)].map((el, i) => {
-    const isNoteOn = onNotes.indexOf(i) !== -1;
-    const isNoteOnCurrentStep = currentStepId === i;
+  const boxes = [...Array(boxCount)].map((el, i) => {
+    const isBoxOn = onBoxes.indexOf(i) !== -1;
+    const isBoxOnCurrentStep = currentStepId === i;
     const stepId = i;
 
     return (
@@ -23,8 +23,8 @@ const Track = ({
         key={i}
         trackId={trackId}
         stepId={stepId}
-        isNoteOn={isNoteOn}
-        isNoteOnCurrentStep={isNoteOnCurrentStep}
+        isBoxOn={isBoxOn}
+        isBoxOnCurrentStep={isBoxOnCurrentStep}
         play={play}
       />
     );
@@ -33,7 +33,7 @@ const Track = ({
   return (
     <div className="track">
       <header className="track_title">{title}</header>
-      <main className="track_notes">{notes}</main>
+      <main className="track_notes">{boxes}</main>
     </div>
   );
 };

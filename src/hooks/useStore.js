@@ -13,12 +13,12 @@ const appReducer = (state, action) => {
       return {
         ...sequenceState.find((seq) => seq.id === action.value),
       };
-    case "SET_ON_NOTES":
-      let newTrackList = state.trackList.map((track, trackID) => {
-        if (action.trackID === trackID) {
+    case "SET_ON_BOXES":
+      let newTrackList = state.trackList.map((track, trackId) => {
+        if (action.trackId === trackId) {
           return {
             ...track,
-            onNotes: action.value,
+            onBoxes: action.value,
           };
         } else {
           return track;
@@ -37,25 +37,25 @@ const Provider = ({ children }) => {
   const [sequence, dispatch] = useReducer(appReducer, { ...sequenceState[0] });
 
   const toggleBox = ({ trackId, stepId }) => {
-    let newOnNotes;
-    const onNotes = sequence.trackList[trackId].onNotes;
+    let newOnBoxes;
+    const onBoxes = sequence.trackList[trackId].onBoxes;
 
-    if (onNotes.indexOf(stepId) === -1) {
-      newOnNotes = [...onNotes, stepId];
+    if (onBoxes.indexOf(stepId) === -1) {
+      newOnBoxes = [...onBoxes, stepId];
     } else {
-      newOnNotes = onNotes.filter((col) => col !== stepId);
+      newOnBoxes = onBoxes.filter((col) => col !== stepId);
     }
     dispatch({
-      type: "SET_ON_NOTES",
-      value: newOnNotes,
+      type: "SET_ON_BOXES",
+      value: newOnBoxes,
       trackId,
     });
   };
 
-  const selectSequence = (sequenceID) => {
+  const selectSequence = (sequenceId) => {
     dispatch({
       type: "SET_SEQUENCE",
-      value: sequenceID,
+      value: sequenceId,
     });
   };
 
