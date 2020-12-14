@@ -1,0 +1,18 @@
+.track {
+  display: flex;
+  flex-direction: row;
+}
+
+.track_title {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.track_notes {
+  display: flex;
+}
