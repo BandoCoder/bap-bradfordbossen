@@ -1,18 +1,21 @@
 .track {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  border-style: solid;
+  margin: 5px;
+  padding: 3px;
+  max-width: 900px;
 }
 
 .track_title {
   display: flex;
-  flex: 0 0 auto;
-  justify-content: flex-end;
   align-items: center;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 12px;
 }
 
-.track_notes {
+.track_boxes {
   display: flex;
 }

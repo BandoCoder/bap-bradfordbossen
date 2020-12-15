@@ -1,6 +1,4 @@
-import React, { useContext, memo } from "react";
-import { sequenceState } from "../sequence.js";
-import { Context } from "../hooks/useStore";
+import React, { memo } from "react";
 import "./Transport.css";
 
 const Transport = ({
@@ -11,11 +9,6 @@ const Transport = ({
   startTime,
   BPM,
 }) => {
-  const {
-    sequence: { id: selectedSequenceId },
-    selectSequence,
-  } = useContext(Context);
-
   function togglePlayback() {
     if (isSequencePlaying) {
       setPastLapse((l) => l + performance.now() - startTime);
@@ -85,20 +78,6 @@ const Transport = ({
       <label className="label_bpm" htmlFor="bpm">
         BPM
       </label>
-      <select
-        className="form_element select_sequence"
-        value={selectedSequenceId}
-        onChange={(e) => selectSequence(+e.target.value)}
-        aria-label="Select sequence"
-      >
-        {sequenceState.map((seq) => {
-          return (
-            <option key={seq.id} value={seq.id}>
-              {seq.title}
-            </option>
-          );
-        })}
-      </select>
     </nav>
   );
 };

@@ -33,7 +33,7 @@ const Track = ({
   return (
     <div className="track">
       <header className="track_title">{title}</header>
-      <main className="track_notes">{boxes}</main>
+      <main className="track_boxes">{boxes}</main>
     </div>
   );
 };

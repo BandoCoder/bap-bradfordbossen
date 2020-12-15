@@ -1,5 +1,7 @@
 body {
-  margin: 25px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
 
 header {
